@@ -1,0 +1,11 @@
+# ตั้งค่าไฟล์หลักให้เป็น index.php
+DirectoryIndex index.php
+
+# เปิดการใช้ URL Rewrite
+Options +FollowSymLinks
+RewriteEngine On
+
+# Redirect ให้ทุก request ไปที่ index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
